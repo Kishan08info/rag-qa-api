@@ -1,0 +1,15 @@
+Model quantization is the process of reducing the numerical precision of a neural network's
+weights and activations, for example converting 32-bit floating point (FP32) values to 8-bit
+integers (INT8). The goal is to shrink the model's memory footprint and speed up inference,
+which is critical for on-device AI where smartphones, IoT devices, and embedded NPUs have
+strict power and memory budgets.
+
+Common approaches include post-training quantization (PTQ), which converts a trained model
+without retraining, and quantization-aware training (QAT), which simulates low precision
+during training to preserve accuracy. PTQ is faster to apply but can lose 1-3% accuracy on
+sensitive models, while QAT typically recovers most of that loss at the cost of a retraining run.
+
+In practice, INT8 quantization can reduce model size by 4x and cut inference latency
+significantly on hardware with INT8 acceleration, such as mobile NPUs and edge TPUs.
+For large language models, 4-bit weight quantization (e.g. GPTQ, AWQ) is now standard for
+fitting 7B+ parameter models onto consumer GPUs and high-end phones.

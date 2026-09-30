@@ -1,0 +1,7 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+pydantic>=2.6
+sentence-transformers>=2.6
+faiss-cpu>=1.8
+numpy>=1.26
+python-multipart>=0.0.9
